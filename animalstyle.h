@@ -12,16 +12,17 @@ typedef struct
 {
     uint8_t    type[10];
     uint8_t    price[20];
-    void       (*action)(uint32_t);
+    void       ( *action)(uint32_t);
 } animal_t;
 
 /********* END OF DEFINITION *********/
 
 /********* PROTOTYPE *********/
-void cat_speak();
-void dog_speak();
-void pig_speak(uint16_t animal_price);
+void    cat_speak();
+void    dog_speak();
+void    pig_speak( uint16_t animal_price);
 
 /********* END OF PROTOTYPE *********/
 
 #endif
+/********* END OF FILE *********/

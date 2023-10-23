@@ -6,3 +6,5 @@ void write_to_file(uint8_t animal_type[])
     fprintf(file,"%s\n",animal_type);
     fclose(file);
 }
+
+/********* END OF FILE *********/

@@ -10,10 +10,10 @@ int main(void)
     uint8_t type[10];
     uint8_t animal_num = 0;
     uint16_t price = 0;
-    for(animal_num = 0;animal_num < MAX_ANIMAL;animal_num++)
+    for(animal_num = 0 ;animal_num < MAX_ANIMAL ;animal_num++)
     {
         gets(type);
-        if(0 == strcmp(type,"cat" ))
+        if ( 0 == strcmp(type,"cat" ))
         {
             strcpy(animal[animal_num].type,"cat");
             strcpy(animal[animal_num].price,"not for sale");
@@ -21,7 +21,7 @@ int main(void)
             animal[animal_num].action(cat_speak);
             write_to_file(animal[animal_num].type);
         }
-        else if(0 == strcmp(type,"dog"))
+        else if (0 == strcmp(type,"dog"))
         {
             strcpy(animal[animal_num].type,"dog");
             strcpy(animal[animal_num].price,"i am your friend");
@@ -29,7 +29,7 @@ int main(void)
             animal[animal_num].action(dog_speak);
             write_to_file(animal[animal_num].type);
         }
-        else if(0 == strcmp(type,"pig"))
+        else if ( 0 == strcmp(type,"pig"))
         {
             strcpy(animal[animal_num].type,"pig");
             strcpy(animal[animal_num].price,"500000");
@@ -40,3 +40,5 @@ int main(void)
     }
     return 0;
 }
+
+/********* END OF FILE *********/
