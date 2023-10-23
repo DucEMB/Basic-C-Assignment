@@ -13,32 +13,29 @@ int main(void)
     for(animal_num = 0;animal_num < MAX_ANIMAL;animal_num++)
     {
         gets(type);
-        switch(type)
+        if(0 == strcmp(type,"cat" ))
         {
-            case "cat":
-            {
-                animal[animal_num].price = {"not for sale"};
-                animal[animal_num].action = cat_speak;
-                break;
-            }
-            case "dog":
-            {
-                animal[animal_num].price = {"i am your friend"};
-                animal[animal_num].action = dog_speak;
-                break;
-            }
-            case "pig":
-            {
-                animal[animal_num].price = {"500000"};
-                price = convert_string_to_int(animal[animal_num].price);
-                animal[animal_num].action = pig_speak(price);
-                break;
-            }
-            default :
-            {
-                printf("wrong animal \n");
-                break;
-            }
+            strcpy(animal[animal_num].type,"cat");
+            strcpy(animal[animal_num].price,"not for sale");
+            animal[animal_num].action = &cat_speak;
+            animal[animal_num].action(cat_speak);
+            write_to_file(animal[animal_num].type);
+        }
+        else if(0 == strcmp(type,"dog"))
+        {
+            strcpy(animal[animal_num].type,"dog");
+            strcpy(animal[animal_num].price,"i am your friend");
+            animal[animal_num].action = &dog_speak;
+            animal[animal_num].action(dog_speak);
+            write_to_file(animal[animal_num].type);
+        }
+        else if(0 == strcmp(type,"pig"))
+        {
+            strcpy(animal[animal_num].type,"pig");
+            strcpy(animal[animal_num].price,"500000");
+            printf("my price is 500000\n");
+            animal[animal_num].action = &pig_speak;
+            write_to_file(animal[animal_num].type);
         }
     }
     return 0;
