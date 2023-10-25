@@ -15,6 +15,10 @@ typedef struct
     void       ( *action)(uint32_t);
 } animal_t;
 
+#define    CAT    0u
+#define    DOG    1u
+#define    PIG    2u
+
 /********* END OF DEFINITION *********/
 
 /********* PROTOTYPE *********/
