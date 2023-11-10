@@ -9,6 +9,8 @@ typedef unsigned char  uint8_t;
 #define    MIN_RAND    0u
 #define    MAX_RAND    2u
 
+#define GET_RANDOM
+
 /********* END OF DEFINITION *********/
 
 /********* PROTOTYPE *********/

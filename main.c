@@ -9,9 +9,14 @@ int main(void)
     animal_t animal[MAX_ANIMAL];
     uint8_t type;
     uint8_t animal_num = 0;
+    uint8_t input[10];
     for (animal_num = 0 ;animal_num < MAX_ANIMAL ;animal_num++)
     {
-        type = get_random();
+        #ifdef  GET_RANDOM
+            type = get_random();
+        #else
+            type = gets(input);
+        #endif
         if ( CAT == type)
         {
             strcpy(animal[animal_num].type,"cat");
