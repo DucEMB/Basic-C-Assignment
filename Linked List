@@ -1,0 +1,71 @@
+#include <stdio.h>
+
+struct node
+{
+	int data;
+	struct node * next;
+};
+typedef struct node node;
+
+void add_node(node ** head, int data)
+{
+	node * newnode = (node *)malloc(sizeof(node));
+	newnode->data = data;
+	newnode->next = NULL;
+	if (* head == NULL)
+	{
+		* head = newnode;
+		return;
+	}
+	node * temp = * head;
+	while (temp->next != NULL)
+	{
+		temp = temp->next;
+	}
+	temp->next = newnode;
+}
+
+void reverse(node ** head)
+{
+	node * curr = *head;
+	node * next = NULL;
+	int temp;
+	while (curr != NULL)
+	{
+		next = curr->next;
+		if ((curr->data % 2 == 0) && (next->data % 2 == 0))
+		{
+			temp = curr->data;
+			curr->data = next->data;
+			next->data = temp;
+		}
+		curr = next;
+	}
+}
+
+void print_list(node * head)
+{
+	node * temp = head;
+	while (temp != NULL)
+	{
+		printf("%d ",temp->data);
+		temp = temp->next;
+	}
+}
+
+int main(void)
+{
+	int n;
+	int i;
+	int data;
+	scanf("%d",&n);
+	node * head = NULL;
+	for (i= 0;i < n;i++)
+	{
+		scanf("%d",&data);
+		add_node(&head,data);
+	}
+	//reverse(&head);
+	print_list(head);
+	return 0;
+}
