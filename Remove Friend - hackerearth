@@ -1,14 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct Node {
+struct Node
+{
     int popularity;
     struct Node* next;
 };
 typedef struct Node Node;
 
-Node* create_node(int popularity) {
-    struct Node* newNode = (Node*)malloc(sizeof(Node));
+Node* create_node(int popularity)
+{
+    Node* newNode = (Node*)malloc(sizeof(Node));
     newNode->popularity = popularity;
     newNode->next = NULL;
     return newNode;
@@ -30,7 +32,7 @@ void delete_friends(struct Node** head, int k) {
 	            } else {
 	                previous->next = current->next;
 	            }
-	            struct Node* temp = current;
+	            Node* temp = current;
 	            current = current->next;
 	            free(temp);
 	            deleted++;
@@ -42,12 +44,12 @@ void delete_friends(struct Node** head, int k) {
     	}
 	}
 	/*if (k > 0) {
-        struct Node* tail = previous;
+        Node* tail = previous;
         while (tail && tail->next) {
             tail = tail->next;
         }
         while (tail && k > 0) {
-            struct Node* temp = tail;
+            Node* temp = tail;
             tail = tail->next;
             free(temp);
             deleted++;
@@ -65,33 +67,34 @@ void insert_node(Node** head, int popularity)
 {
     Node* newNode = create_node(popularity);
     if (*head == NULL)
-	{
+    {
         *head = newNode;
     }
-	else
-	{
+    else
+    {
         Node* temp = *head;
         while (temp->next != NULL) {
-            temp = temp->next;
-        }
+        temp = temp->next;
+    }
         temp->next = newNode;
     }
 }
 
 void traverse_linked_list(Node ** head)
 {
-	Node* temp = *head;
+    Node* temp = *head;
     while (temp != NULL)
-	{
+    {
         printf("%d ", temp->popularity);
         temp = temp->next;
     }
     printf("\n");
 }
-void free_linked_list(struct Node** head) {
+void free_linked_list(struct Node** head)
+{
     Node* temp = *head;
     while (temp != NULL)
-	{
+    {
         Node* current = temp;
         temp = temp->next;
         free(current);
@@ -103,13 +106,14 @@ int main()
 {
     int t;
     scanf("%d", &t);
-	int i;
+    int i;
     while (t--)
-	{
+    {
         int n, k;
         scanf("%d%d", &n, &k);
         struct Node* head = NULL;
-        for (i = 0; i < n; i++) {
+        for (i = 0; i < n; i++)
+	{
             int popularity;
             scanf("%d", &popularity);
             insert_node(&head, popularity);
