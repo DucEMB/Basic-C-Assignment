@@ -71,5 +71,3 @@ void traverse_array(int * ptr,int * size)
 		printf("%d ",*(ptr + i));
 	}
 }
-
-
