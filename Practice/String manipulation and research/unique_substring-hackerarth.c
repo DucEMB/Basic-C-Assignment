@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-// link problem : https://www.hackerearth.com/practice/algorithms/string-algorithm/basics-of-string-manipulation/practice-problems/algorithm/unique-substrings-71b184fb/
+// link problem : https://www.hackerearth.com/practice/algorithms/string-algorithm/basics-of-string-manipulation/practice-problems/algorithm/unique-substrings-d65a3735/
 
 int main()
 {
