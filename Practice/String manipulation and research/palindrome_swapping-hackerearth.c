@@ -3,6 +3,8 @@
 #include<malloc.h>
 #include<string.h>
 
+// link problem : https://www.hackerearth.com/practice/algorithms/string-algorithm/basics-of-string-manipulation/practice-problems/algorithm/palindrome-swapping-37143cf3/
+
 int main()
 {
     char* T = (char*)malloc(200000 * sizeof(char));
